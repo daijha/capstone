@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// schema syntax : 
+// schema syntax :
 const entrySchema = new mongoose.Schema({
   name: {
     type: String,
@@ -18,4 +18,6 @@ const entrySchema = new mongoose.Schema({
   },
 });
 
-const Entry = mongoose.model("Entry",entrySchema)//  creates model Entry based off of the entrySchema 
+const Entry = mongoose.model("Entry", entrySchema); //  creates model Entry based off of the entrySchema
+
+export default Entry;
