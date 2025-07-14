@@ -1,9 +1,12 @@
 import express from 'express'
 import cors from 'cors'
-const app = express();
-const port = 3000;
 
-app.use(cors())
+
+
+const app = express();
+const port = process.env.PORT;
+
+app.use(cors()) // makes interaction from other ports okay to do 
 
 
 //base url
