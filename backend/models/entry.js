@@ -2,9 +2,13 @@ import mongoose from "mongoose";
 
 // schema syntax :
 const entrySchema = new mongoose.Schema({
+  userId:{
+    type: String,
+    required:true,
+    },
   name: {
     type: String,
-    required: true,
+    required: true,// they can add whatever they want here .
     maxlength: 10,
   },
   date: {
