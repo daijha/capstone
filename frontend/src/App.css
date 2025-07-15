@@ -1,0 +1,14 @@
+.bookname{
+    border: 1px solid black;
+    text-align: center;
+    margin:20px;
+}
+
+.options{
+    border: 1px,solid rgb(236, 13, 13);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px;
+
+}
