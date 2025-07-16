@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <>
-      <div className="bookname">Entries</div>
+      <h1 className="pageName">Entries</h1>
       <div className="options">
         <Link to="/create">
           <button>create new entry</button>
         </Link>
-        <Link to ="/edit">
+        <Link to ="/edit/:id">
           <button>edit existing entry</button>
         </Link>
         <Link to ="/read">

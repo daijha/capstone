@@ -1,14 +1,26 @@
-.bookname{
-    border: 1px solid black;
-    text-align: center;
-    margin:20px;
+.pageName {
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px;
 }
 
-.options{
-    border: 1px,solid rgb(236, 13, 13);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin:20px;
-
+.options {
+  border: 1px, solid rgb(236, 13, 13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.nameDate{
+    border: 1px solid green; 
+      display:flex;
+        gap: 252px;/*gap adds space between the 2 items in the div! */
+        margin: 8px;
+}
+.pageBody {
+  border: 1px, solid rgb(236, 13, 13);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  
 }
