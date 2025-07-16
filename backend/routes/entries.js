@@ -46,16 +46,18 @@ router.put("/entries/:id", async (req, res) => {
 });
 
 router.delete("/entries/:id", async (req, res) => {
-  // id is needed to edit entry
-  try {
-    const deleteEntry = await Entry.findByIdAndDelete(req.params.id);
-    res.status(200).json(deleteEntry);
-  } catch {
+  // id is needed to edit entry 
+  try{
+ const deleteEntry = await Entry.findByIdAndDelete(req.params.id);
+  res.status(200).json(deleteEntry);
+  }catch {
     res.status(500).json({ message: "error!" });
   }
 });
+ 
 
 export default router; // export the router not the file name.
+
 
 /*status codes:
 200  ok   GET
