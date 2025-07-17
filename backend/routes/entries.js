@@ -46,22 +46,34 @@ router.put("/entries/:id", async (req, res) => {
 });
 
 router.delete("/entries/:id", async (req, res) => {
-  // id is needed to edit entry 
-  try{
- const deleteEntry = await Entry.findByIdAndDelete(req.params.id);
-  res.status(200).json(deleteEntry);
-  }catch {
+  const { id } = req.params; // takes the _id  from the url
+  const requesterId = req.body.userId; // renames the userId because it cant access the entry model.
+  try {
+    const entry = await Entry.findById(id); // finds the entry by id (mongo syntax)
+    console.log('reached')
+    if (!entry) {
+      return res.status(404).json({ message: "Entry was not found" });
+    }
+    console.log(entry.userId)
+    if (entry.userId !== requesterId) {
+      return res
+        .status(403)
+        .json({ message: " you can't just delete someone else's entry..." });
+    } else {
+      const deleteEntry = await Entry.findByIdAndDelete(req.params.id);
+      res.status(200).json(deleteEntry);
+    }
+  } catch (error) {
     res.status(500).json({ message: "error!" });
   }
 });
- 
 
 export default router; // export the router not the file name.
 
-
-/*status codes:
+/*status codes:  
 200  ok   GET
 201  created  POST
 400 bad request 
+403 unauthorized access
 500 error 
 */
