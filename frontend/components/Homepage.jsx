@@ -8,15 +8,11 @@ function Homepage() {
         <Link to="/create">
           <button>create new entry</button>
         </Link>
-        <Link to ="/edit/:id">
-          <button>edit existing entry</button>
-        </Link>
+       
         <Link to ="/read">
           <button> read entries</button>
         </Link>
-        <Link to= "/delete/:id">
-          <button>delete an entry</button>
-        </Link>
+      
       </div>
     </>
   );

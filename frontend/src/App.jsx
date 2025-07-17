@@ -6,6 +6,8 @@ import CreateEntry from "../components/CreateEntry";
 import ReadEntries from "../components/ReadEntries";
 import EditEntry from "../components/EditEntry";
 import DeleteEntry from "../components/DeleteEntry";
+import NavBar from "../components/NavBar";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,7 +32,7 @@ function App() {
 
   return (
     <>
-
+      <NavBar/>
       <Routes>
         <Route path="/home" element={<Homepage />} />
         <Route path="/create" element={<CreateEntry />} />

@@ -27,3 +27,11 @@
 ul{
     list-style-type: none;
 }
+.navbar{
+      border: 1px, solid blue;
+      display:flex;
+      justify-content: space-around;
+      padding:12px;
+
+
+}
