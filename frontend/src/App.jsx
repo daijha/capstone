@@ -30,13 +30,13 @@ function App() {
 
   return (
     <>
-    
+
       <Routes>
         <Route path="/home" element={<Homepage />} />
         <Route path="/create" element={<CreateEntry />} />
         <Route path="/read" element={<ReadEntries />} />
         <Route path="/edit/:id" element={<EditEntry />} />
-        <Route path="/delete" element={<DeleteEntry />} />
+        <Route path="/delete/:id" element={<DeleteEntry />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </>

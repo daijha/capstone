@@ -3,7 +3,7 @@ const router = express.Router(); // without this i cant have a routes folder... 
 import Entry from "../models/entry.js"; // i will have to interact with the model( w/ mongo query language) to access the data for endpoints.
 
 router.get("/", async (req, res) => {
-  // use router instead of app  when using a router. to read the entries
+  // use router instead of app  when using a router. to read all the entries
   try {
     const readEntries = await Entry.find();
     res.status(200).json(readEntries);

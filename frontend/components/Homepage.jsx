@@ -14,7 +14,7 @@ function Homepage() {
         <Link to ="/read">
           <button> read entries</button>
         </Link>
-        <Link to= "/delete">
+        <Link to= "/delete/:id">
           <button>delete an entry</button>
         </Link>
       </div>

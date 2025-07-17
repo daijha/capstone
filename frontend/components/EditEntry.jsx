@@ -6,9 +6,11 @@ function EditEntry() {
   //this grabs the parameter( in this case the id# ) has to be called inside of a function
   const { id } = useParams();
 
+  const [userId, setUserId]= useState("")
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [date, setDate] = useState("");
+
 
   useEffect(() => {
     async function loadData() {
@@ -26,7 +28,9 @@ function EditEntry() {
       setName(data.name);
       setContent(data.content);
       setDate(formatDate);
+      setUserId(data.userId)
     }
+
 
     loadData(); // actually call the function
   }, [id]); // depends on the id
@@ -37,6 +41,7 @@ function EditEntry() {
       name,
       date,
       content,
+      userId
     };
 
     try {
@@ -50,6 +55,7 @@ function EditEntry() {
           "Content-Type": "application/json",
         },
       });
+console.log(editedEntry)
 
       // .ok is a built in success detector for fetch responses.
       if (response.ok) {
