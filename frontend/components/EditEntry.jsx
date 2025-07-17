@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 // another hook that is used to read values in the url from the client side
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function EditEntry() {
   //this grabs the parameter( in this case the id# ) has to be called inside of a function
   const { id } = useParams();
+  const navigate = useNavigate()
 
   const [userId, setUserId]= useState("")
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [date, setDate] = useState("");
+  const [entrySaved, setEntrySaved] = useState(false);
+
 
 
   useEffect(() => {
@@ -59,6 +63,7 @@ console.log(editedEntry)
 
       // .ok is a built in success detector for fetch responses.
       if (response.ok) {
+        setEntrySaved(true)
         alert("Edit Saved!");
       } else {
         alert("Save Failed!");
@@ -102,6 +107,11 @@ console.log(editedEntry)
           {/* this allows for a bigger text box */}
         </div>
         <button onClick={handleSave}> Save Entry </button>
+        {entrySaved && <button
+            onClick={() => {
+              navigate("/read");
+            }}
+          > Go Read Entries</button>}
       </div>
     </>
   );
