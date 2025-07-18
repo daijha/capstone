@@ -22,6 +22,8 @@ function CreateEntry() {
       date,
       content,
     };
+    // saving the userId using local storage will access using userId(key, value)
+    localStorage.setItem("userId", userId)
 
     try {
       const response = await fetch(`http://localhost:3000/create`, {

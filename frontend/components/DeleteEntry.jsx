@@ -6,7 +6,7 @@ function DeleteEntry() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [userId, setUserId] = useState("null"); // intentionally blank
-  const currentUserId = "userA"
+  const currentUserId = localStorage.getItem("userId")// grabs the  user id given from localstorage
 
   useEffect(() => {
     // i need to load the  entry properly to  check user id for "deletion auth"

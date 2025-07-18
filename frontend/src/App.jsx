@@ -32,11 +32,12 @@ function App() {
 
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/home" element={<Homepage />} />
         <Route path="/create" element={<CreateEntry />} />
-        <Route path="/read" element={<ReadEntries />} />
+        <Route path="/read" element={<ReadEntries />} /> {/* read all */}
+        <Route path="/read1" element={<ReadEntries />} /> {/* read one */}
         <Route path="/edit/:id" element={<EditEntry />} />
         <Route path="/delete/:id" element={<DeleteEntry />} />
         <Route path="*" element={<Navigate to="/home" replace />} />

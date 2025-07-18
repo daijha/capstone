@@ -13,6 +13,9 @@ function EditEntry() {
   const [content, setContent] = useState("");
   const [date, setDate] = useState("");
   const [entrySaved, setEntrySaved] = useState(false);
+  const user = localStorage.getItem("userId")
+  const[allowed, setAllowed] = useState(false)//should be false. only a few will be allowed at a time 
+
 
 
 
@@ -22,6 +25,11 @@ function EditEntry() {
       const response = await fetch(`http://localhost:3000/entries/${id}`); // should add the id into the url
       const data = await response.json(); // convert the response to json
 
+      if (data.userId === user){
+        setAllowed(true)
+      }else{
+        setAllowed(false)
+      }
       /* FORMATTING THE DATE:
      creates a new js data object from data.date toISOstring shortens the date. 
      splitting at T (array method)makes the date string into an array which then the first index is accessed.*/
@@ -75,8 +83,8 @@ console.log(editedEntry)
 
   return (
     <>
-      <h1 className="pageName">Edit</h1>
-
+    {allowed ? (<>
+     <h1 className="pageName">Edit</h1>
       <div className="pageBody">
         <div className="nameDate">
           <label>
@@ -113,7 +121,8 @@ console.log(editedEntry)
             }}
           > Go Read Entries</button>}
       </div>
-    </>
+    </>) :( <p> You can't edit this entry. It's not yours.</p>)
+}</>
   );
 }
 export default EditEntry;
