@@ -24,7 +24,13 @@ function CreateEntry() {
     };
     // saving the userId using local storage will access using userId(key, value)
     localStorage.setItem("userId", userId)
-   
+
+    
+    // cheap validation to make sure everything is included:
+    if (!userId || !name || !date || !content){
+      alert(" you need to fill out everything before trying to save.")
+      return; // stops everything.
+    }
 
     try {
       const response = await fetch(`http://localhost:3000/create`, {
