@@ -4,6 +4,7 @@ import "./App.css";
 import Homepage from "../components/Homepage";
 import CreateEntry from "../components/CreateEntry";
 import ReadEntries from "../components/ReadEntries";
+import ReadOneEntry from "../components/ReadOneEntry";
 import EditEntry from "../components/EditEntry";
 import DeleteEntry from "../components/DeleteEntry";
 import NavBar from "../components/NavBar";
@@ -37,7 +38,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/create" element={<CreateEntry />} />
         <Route path="/read" element={<ReadEntries />} /> {/* read all */}
-        <Route path="/read1" element={<ReadEntries />} /> {/* read one */}
+        <Route path="/read1/:id" element={<ReadOneEntry />} /> {/* read one */}
         <Route path="/edit/:id" element={<EditEntry />} />
         <Route path="/delete/:id" element={<DeleteEntry />} />
         <Route path="*" element={<Navigate to="/home" replace />} />

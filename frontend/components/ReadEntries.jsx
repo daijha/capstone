@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 {
   /* this allows for navigation between pages */
 }
@@ -49,10 +50,11 @@ function ReadEntries() {
             <ul>
               {entryDisplay.map((entry) => (
                 //making the entries link to another pg for full view
-                <li key={entry._id}>
-                  <h3> {entry.name} </h3>{" "}
-                  {new Date(entry.date).toLocaleDateString()}{" "}
+                <li key={entry._id} >
+                  <h3 > {entry.name} </h3>
+                  {new Date(entry.date).toLocaleDateString()}
                   {/*this is a simpler way to format the date... */}
+      
                   <br />
 
                   {entry.content} <br />
@@ -67,6 +69,8 @@ function ReadEntries() {
                       </button>
                     </>
                   )}
+                   <br/>
+                  <button onClick={()=> navigate(`/read1/${entry._id}`)}>Read</button>
                 </li>
               ))}
             </ul>
