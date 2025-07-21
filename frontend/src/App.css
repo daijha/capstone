@@ -1,45 +1,105 @@
+/*font imports */
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+
+body {
+  /* body still works for the entire page even if you use react */
+background-color: #fff;
+background-image:
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+
+
+  color: #3a3a3a;
+  font-family:'Happy Monkey';
+  font-size: 20px;
+}
+
 .pageName {
-  border: 1px solid black;
   text-align: center;
-  margin: 20px;
+  margin: 20px auto; /* auto  distributes the left and right evenly */
+  width: 40vw;
+  padding: 8px;
+    background-color: rgba(101, 235, 195, 0.425);
+
+  /* font-family:; */
+}
+.tagline {
+  text-align: center;
+  font-style: italic;
+  color: #7f6a93;
 }
 
 .options {
-  border: 1px, solid rgb(236, 13, 13);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px auto;
+  width: 40vw;
+  padding: 20px;
+    background-color: rgba(108, 75, 155, 0.479);
+
 }
-.nameDate{
-    border: 1px solid green; 
-      display:flex;
-        gap: 252px;/*gap adds space between the 2 items in the div! */
-        margin: 8px;
+button {
+  background-color: #a2c5acff;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 1s ease;
+}
+button:hover{
+    background-color: #7f6a93;
+}
+.nameDate {
+  display: flex;
+  gap: 72px; /*gap adds space between the 2 items in the div! */
+  margin: 32px;
+  width:120vh;
+  padding:12px;
+}
+input, textarea{
+    border-radius:8px;
+    padding:8px;
+}
+textarea{
+border-radius:12px;
+margin-bottom: 20px;
+
 }
 .pageBody {
-  border: 1px, solid rgb(236, 13, 13);
-  display:flex;
-  flex-direction:column;
+  width: 64vw;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  
+  margin: 32px auto;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-.navbar{
-      border: 1px, solid blue;
-      display:flex;
-      justify-content: space-around;
-      padding:12px;
+.navbar {
+  background-color: rgba(108, 75, 155, 0.479);
+  font-size: 32px;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  margin: 60px;
+}
+li {
+  border: 1px solid purple;
+}
+.userBox {
+  border: 2px, solid orange;
+  width:40vw;
+  margin:16px;
+}
 
-
-}
-li{
-    border:1px solid purple
-    
-}
-.userBox{
- border: 2px, solid orange;
-
+.pageBody,
+.options,
+.pageName,
+.navbar {
+  box-shadow: 0 4px 12px rgba(38, 2, 52, 0.223);
+  border-radius: 12px;
 }

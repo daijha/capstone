@@ -25,10 +25,10 @@ function CreateEntry() {
     // saving the userId using local storage will access using userId(key, value)
     localStorage.setItem("userId", userId)
 
-    
+
     // cheap validation to make sure everything is included:
     if (!userId || !name || !date || !content){
-      alert(" you need to fill out everything before trying to save.")
+      alert(" You need to fill out everything before trying to save.")
       return; // stops everything.
     }
 
@@ -61,7 +61,8 @@ function CreateEntry() {
   return (
     <>
       <h1 className="pageName">Create</h1>
-
+      <h2 className="tagline">Write what's on your mind</h2>
+      <h4 className= "tagline">Fill out everything to save</h4>
       <div className="pageBody">
         <div className="nameDate">
           <label>
@@ -69,6 +70,7 @@ function CreateEntry() {
             <input
               type="text"
               value={userId}
+              placeholder="create one here"
               onChange={(event) => setUserId(event.target.value)}
             ></input>
           </label>
@@ -78,6 +80,7 @@ function CreateEntry() {
             <input
               type="text"
               value={name}
+              placeholder="your name"
               onChange={(event) => setName(event.target.value)}
             ></input>
           </label>
@@ -93,8 +96,9 @@ function CreateEntry() {
         <div>
           <textarea
             rows="20"
-            cols="80"
+            cols="86"
             value={content}
+            placeholder="Write something ... "
             onChange={(event) => setContent(event.target.value)}
           ></textarea>
           {/* this allows for a bigger text box */}

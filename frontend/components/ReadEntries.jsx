@@ -36,15 +36,19 @@ function ReadEntries() {
       <h1 className="pageName">Read</h1>
       {/* conditional rendering with ternary */}
       <div className="pageBody">
-        {entries.length === 0 ? (
-          <p>No entires yet! Someone, go make one!</p>
+        {entryDisplay.length === 0 ? (
+          <>
+           <p>No entires yet. Go make one!</p>
+          <button onClick={()=>navigate('/create')}> Create </button>
+          </>
+         
         ) : (
           <div>
             <div className="userBox">
-              <p> User:{user} </p>
+              <p> User: {user} </p>
               <button onClick={() => setReadOneUser((prev) => !prev)}>
-                show all entries
-              </button>{" "}
+                {readOneUser? "Show All": "My Entries"} {/* ternary to change button's label */}
+              </button>
               {/* this should toggle the button to activate filter toggle */}
             </div>
             <ul>
