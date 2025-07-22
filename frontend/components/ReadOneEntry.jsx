@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 function ReadOneEntry() {
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [entry, setEntry] = useState(null);
   useEffect(() => {
     async function loadEntry() {
@@ -23,11 +22,13 @@ function ReadOneEntry() {
         <p> Entry Loading</p>
       ) : (
         <>
-          {entry && <h1>{entry.name}</h1>}
-          <p>{new Date(entry.date).toLocaleDateString()}</p>
+          <div className="pageBody">
+            {entry && <h1>{entry.name}</h1>}
+            <p>{new Date(entry.date).toLocaleDateString()}</p>
 
-          <p>{entry.content}</p>
-          <button onClick={()=>navigate(`/read`)}>Go Back</button>
+            <p>{entry.content}</p>
+            <button onClick={() => navigate(`/read`)}>Go Back</button>
+          </div>
         </>
       )}
     </>

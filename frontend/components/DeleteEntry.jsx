@@ -6,7 +6,7 @@ function DeleteEntry() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [userId, setUserId] = useState("null"); // intentionally blank
-  const currentUserId = localStorage.getItem("userId")// grabs the  user id given from localstorage
+  const currentUserId = localStorage.getItem("userId"); // grabs the  user id given from localstorage
 
   useEffect(() => {
     // i need to load the  entry properly to  check user id for "deletion auth"
@@ -20,18 +20,18 @@ function DeleteEntry() {
         console.log(error);
       }
     }
-          getThatEntry();
-
+    getThatEntry();
   }, [{ id }]); // id is the dependency 4 this 2 run
 
   async function handleDelete() {
     try {
       const response = await fetch(`http://localhost:3000/entries/${id}`, {
         method: "DELETE",
-        headers:{// need to include the header so the backend knows its getting json
-            "Content-type": "application/json"
+        headers: {
+          // need to include the header so the backend knows its getting json
+          "Content-type": "application/json",
         },
-        body: JSON.stringify({ userId: currentUserId  })
+        body: JSON.stringify({ userId: currentUserId }),
       });
 
       // .ok is a built in success detector for fetch responses.
@@ -47,9 +47,11 @@ function DeleteEntry() {
   }
   return (
     <>
-      <h1> Delete Entry</h1>
-      <p>Are you sure you want to delete this entry?</p>
-      <button onClick={handleDelete}>Confirm Delete </button>
+    <h1 className="pageName"> Delete Entry</h1>
+      <div className="pageBody">
+        <p>Are you sure you want to delete this entry?</p>
+        <button onClick={handleDelete}>Confirm Delete </button>
+      </div>
     </>
   );
 }

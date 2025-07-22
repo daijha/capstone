@@ -96,7 +96,7 @@ function CreateEntry() {
         <div>
           <textarea
             rows="20"
-            cols="86"
+            cols="120"
             value={content}
             placeholder="Write something ... "
             onChange={(event) => setContent(event.target.value)}

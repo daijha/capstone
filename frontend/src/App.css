@@ -1,18 +1,24 @@
 /*font imports */
-@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Playpen+Sans:wght@100..800&display=swap");
 
 body {
   /* body still works for the entire page even if you use react */
-background-color: #fff;
-background-image:
-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-linear-gradient(#eee .1em, transparent .1em);
-background-size: 100% 1.2em;
 
+  /* free use custom gradient from source mentioned in README i could have built it but it was already done before.*/
+  background-color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
 
+  
   color: #3a3a3a;
-  font-family:'Happy Monkey';
+  font-family: "Happy Monkey";
   font-size: 20px;
 }
 
@@ -20,8 +26,9 @@ background-size: 100% 1.2em;
   text-align: center;
   margin: 20px auto; /* auto  distributes the left and right evenly */
   width: 40vw;
-  padding: 8px;
-    background-color: rgba(101, 235, 195, 0.425);
+  padding: 4px;
+  background-color: #aac0f0;
+  font-family: "Playpen Sans";
 
   /* font-family:; */
 }
@@ -38,39 +45,39 @@ background-size: 100% 1.2em;
   margin: 20px auto;
   width: 40vw;
   padding: 20px;
-    background-color: rgba(108, 75, 155, 0.479);
-
+  background-color: #9eafe8;
 }
 button {
-  background-color: #a2c5acff;
+  background-color: #858fd0;
   border-radius: 8px;
   padding: 8px;
-  margin: 8px;
+  margin:8px;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px #2a2a3c;
   transition: background-color 1s ease;
 }
-button:hover{
-    background-color: #7f6a93;
+button:hover {
+  background-color: #a0adff;
 }
 .nameDate {
   display: flex;
-  gap: 72px; /*gap adds space between the 2 items in the div! */
-  margin: 32px;
-  width:120vh;
-  padding:12px;
+  gap: 88px; /*gap adds space between the 2 items in the div! */
+  margin: 20px;
+  padding: 12px;
 }
-input, textarea{
-    border-radius:8px;
-    padding:8px;
+input,
+textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
 }
-textarea{
-border-radius:12px;
-margin-bottom: 20px;
-
+textarea {
+  border-radius: 12px;
+  margin-bottom: 8px;
 }
 .pageBody {
-  width: 64vw;
+  background-color: #aac0f0;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,26 +87,36 @@ ul {
   list-style-type: none;
 }
 .navbar {
-  background-color: rgba(108, 75, 155, 0.479);
+  background-color: #93a0de;
   font-size: 32px;
   display: flex;
   justify-content: space-around;
   padding: 8px;
-  margin: 60px;
+  margin-left: 124px;
+  margin-top: 44px;
+  margin-bottom: 40px;
+  width: 80vw;
 }
 li {
-  border: 1px solid purple;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px #2a2a3c;
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px;
+  margin-left: -20px; /* haha... this was annoying*/
+  height: 24vh;
 }
 .userBox {
-  border: 2px, solid orange;
-  width:40vw;
-  margin:16px;
+  width: 20vw;
+  height: 16vh;
+  margin: 28px;
 }
 
 .pageBody,
 .options,
 .pageName,
 .navbar {
-  box-shadow: 0 4px 12px rgba(38, 2, 52, 0.223);
+  box-shadow: 0 4px 8px #2a2a3c;
   border-radius: 12px;
 }
