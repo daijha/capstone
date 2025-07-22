@@ -108,7 +108,7 @@ console.log(editedEntry)
         <div>
           <textarea
             rows="20"
-            cols="80"
+            cols="120"
             value={content}
             onChange={(event) => setContent(event.target.value)}
           ></textarea>

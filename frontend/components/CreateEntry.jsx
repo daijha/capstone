@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 function CreateEntry() {
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
@@ -60,7 +61,10 @@ function CreateEntry() {
 
   return (
     <>
-      <h1 className="pageName">Create</h1>
+      <h1 className="pageName">
+        <img/>
+        Create
+        </h1>
       <h2 className="tagline">Write what's on your mind</h2>
       <h4 className= "tagline">Fill out everything to save</h4>
       <div className="pageBody">
