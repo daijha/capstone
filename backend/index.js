@@ -17,14 +17,14 @@ app.use('/',entriesRouter)// first param sets base path in router second is the 
 
 
 //base url
-app.get("/", (req, res) => {
+app.get("/hit", (req, res) => {
   res.json("hello world backend");
 });
 
 
 
 // listener 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", ()=> {
   console.log(`server listening at ${port} `);
   //add the db connection in the app.listen
   connectDb();
