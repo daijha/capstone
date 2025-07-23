@@ -22,7 +22,7 @@ function EditEntry() {
   useEffect(() => {
     async function loadData() {
       // fetch('/entries/${id}') //searches for the entry that matches that id
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`); // should add the id into the url
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/entries/${id}`); // should add the id into the url
       const data = await response.json(); // convert the response to json
 
       if (data.userId === user){
@@ -60,7 +60,7 @@ function EditEntry() {
       /* fetch does get requests by default so it needs additional configurations. 
     it also needs to be set to a string  using json stringify sot the browser understands... 
     a header needs to be added with they type of content which is json*/
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/entries/${id}`, {
         method: "PUT",
         body: JSON.stringify(editedEntry),
         headers: {
@@ -121,7 +121,7 @@ console.log(editedEntry)
             }}
           > Go Read Entries</button>}
       </div>
-    </>) :( <p> You can't edit this entry. It's not yours.</p>)
+    </>) :( <p className="pageBody"> You can't edit this entry. It's not yours.</p>)
 }</>
   );
 }
