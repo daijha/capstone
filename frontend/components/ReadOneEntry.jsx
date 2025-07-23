@@ -7,7 +7,7 @@ function ReadOneEntry() {
   const [entry, setEntry] = useState(null);
   useEffect(() => {
     async function loadEntry() {
-      const response = await fetch(`http://localhost:3000/entries/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/entries/${id}`);
       const data = await response.json();
       setEntry(data);
     }

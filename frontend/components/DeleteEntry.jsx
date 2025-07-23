@@ -13,7 +13,7 @@ function DeleteEntry() {
 
     async function getThatEntry() {
       try {
-        const response = await fetch(`http://localhost:3000/entries/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/entries/${id}`);
         const data = await response.json();
         setUserId(data.userId);
       } catch (error) {
@@ -25,7 +25,7 @@ function DeleteEntry() {
 
   async function handleDelete() {
     try {
-      const response = await fetch(`http://localhost:3000/entries/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/entries/${id}`, {
         method: "DELETE",
         headers: {
           // need to include the header so the backend knows its getting json
