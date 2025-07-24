@@ -19,7 +19,7 @@ function ReadOneEntry() {
   return (
     <>
       {!entry ? (
-        <p> Entry Loading</p>
+        <p className="pageBody"> Entry Loading</p>
       ) : (
         <>
           <div className="pageBody">

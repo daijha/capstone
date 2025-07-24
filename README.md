@@ -26,6 +26,7 @@ I used a light lavender palette. For the paper background I used a CSS gradient 
 Future Adjustments: 
 I would like to enhance the styling more by adding icons and adding in media query to fit smaller screens.
 Adding actual authentication or a actual way to make every post truly anonymous would also be nice.
+on the deployed version of the app, there is a slight delay when loading the entries. I could add something to indicate that the data is loading.
 
 Link to the deployed app:
 https://capstone-frontend-0pva.onrender.com/home
